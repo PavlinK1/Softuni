@@ -1,6 +1,5 @@
 n = int(input())
 dictionary = {}
-fuell = 0
 for i in range(n):
     car, mileage, fuel = input().split("|")
     dictionary[car] = {"mileage": int(mileage), "fuel": int(fuel)}
