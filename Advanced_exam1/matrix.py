@@ -29,9 +29,12 @@ for row_index in range(rows):
 player_path = [player_position]
 row, col = player_position
 command = input()
-
+is_true = True
 
 while command:
+    if not is_true:
+        command = input()
+        is_true = True
     if command == 'up':
         row -= 1
     elif command == 'down':
@@ -41,7 +44,7 @@ while command:
     elif command == 'left':
         col -= 1
     else:
-        command = input()
+        is_true = False
         continue
     row, col = calculate_position(matrix, row, col)
     if matrix[row][col] == 'X':
@@ -51,7 +54,13 @@ while command:
         break
     elif matrix[row][col].isdigit():
         coins += int(matrix[row][col])
+        if coins >= 100:
+            player_path.append([row, col])
+            break
         matrix[row][col] = 'P'
+    else:
+        if not matrix[row][col] == 'P':
+            exit()
 
     player_path.append([row, col])
     command = input()
@@ -63,5 +72,3 @@ else:
 print("Your path:")
 for coordinates in player_path:
     print(coordinates)
-
-
