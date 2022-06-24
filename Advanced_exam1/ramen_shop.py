@@ -1,5 +1,7 @@
 from collections import deque
 
+# The idea of this MAP func.  is to make the list value into integers
+# and it is way easier.
 bowls_of_ramen = deque(map(int, input().split(", ")))
 customers = deque(map(int, input().split(", ")))
 
