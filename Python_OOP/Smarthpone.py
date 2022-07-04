@@ -8,7 +8,7 @@ class Smartphone():
         self.is_on = not self.is_on
 
     def install(self, app, app_memory):
-        if self.is_on and self.memory >= app_memory and not self.memory == 0:
+        if self.is_on and self.memory >= app_memory and app_memory > 0:
             self.memory -= app_memory
             self.apps.append(app)
             return f"Installing {app}"
