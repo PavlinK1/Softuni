@@ -8,7 +8,7 @@ class Vehicle:
 
 class Bus(Vehicle):
 
-    def __init__(self,name, max_speed, mileage):
+    def __init__(self, name, max_speed, mileage):
         super().__init__(name, max_speed, mileage)
 
     def bus_info(self):
@@ -17,3 +17,6 @@ class Bus(Vehicle):
 
 school_bus = Bus('Volvo', 180, 12)
 print(school_bus.bus_info())
+
+asa = Vehicle("Mercedes", 120, 23)
+print(asa.name)
